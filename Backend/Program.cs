@@ -1,13 +1,13 @@
+using Backend.Evenements.DbContexts;
 using Microsoft.EntityFrameworkCore;
-using Backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<EvenementContext>(opt =>
-    opt.UseInMemoryDatabase("EvenementList"));
+
+builder.Services.AddDbContext<EvenementsContext>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -21,6 +21,10 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();

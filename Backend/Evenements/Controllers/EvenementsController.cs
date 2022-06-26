@@ -5,17 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Backend.Models;
+using Backend.Evenements.DbContexts;
+using Backend.Evenements.Entities;
 
-namespace Backend.Controllers
+namespace Backend.Evenements.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class EvenementsController : ControllerBase
     {
-        private readonly EvenementContext _context;
+        private readonly EvenementsContext _context;
 
-        public EvenementsController(EvenementContext context)
+        public EvenementsController(EvenementsContext context)
         {
             _context = context;
         }
@@ -33,7 +34,7 @@ namespace Backend.Controllers
 
         // GET: api/Evenements/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Evenement>> GetEvenement(int id)
+        public async Task<ActionResult<Evenement>> GetEvenement(long id)
         {
           if (_context.Evenements == null)
           {
@@ -52,7 +53,7 @@ namespace Backend.Controllers
         // PUT: api/Evenements/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEvenement(int id, Evenement evenement)
+        public async Task<IActionResult> PutEvenement(long id, Evenement evenement)
         {
             if (id != evenement.Id)
             {
@@ -87,7 +88,7 @@ namespace Backend.Controllers
         {
           if (_context.Evenements == null)
           {
-              return Problem("Entity set 'EvenementContext.Evenements'  is null.");
+              return Problem("Entity set 'evenementsContext.Evenements'  is null.");
           }
             _context.Evenements.Add(evenement);
             await _context.SaveChangesAsync();
@@ -97,7 +98,7 @@ namespace Backend.Controllers
 
         // DELETE: api/Evenements/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEvenement(int id)
+        public async Task<IActionResult> DeleteEvenement(long id)
         {
             if (_context.Evenements == null)
             {
@@ -115,7 +116,7 @@ namespace Backend.Controllers
             return NoContent();
         }
 
-        private bool EvenementExists(int id)
+        private bool EvenementExists(long id)
         {
             return (_context.Evenements?.Any(e => e.Id == id)).GetValueOrDefault();
         }

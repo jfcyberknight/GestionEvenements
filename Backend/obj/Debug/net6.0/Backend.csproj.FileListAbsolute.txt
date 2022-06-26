@@ -27,9 +27,12 @@ C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\ref\Backend.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Humanizer.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\MessagePack.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -52,8 +55,6 @@ C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
-C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
