@@ -1,0 +1,62 @@
+﻿@using Frontend.Evenements.Model
+
+@page "/evenements"
+
+@inject HttpClient Http
+
+<PageTitle>Événements</PageTitle>
+
+<h1>Événements</h1>
+
+<p>Liste des événements planifiés</p>
+
+@if (evenements == null)
+{
+    <p><em>Chargement...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(evenements.Any())
+            {
+                foreach (var evenement in evenements)
+                {
+                    <tr>
+                        <td>@evenement.Nom</td>
+                        <td>@evenement.Description</td>
+                        <td>@evenement.Datedebut?.ToShortDateString()</td>
+                        <td>@evenement.Datefin?.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                    <tr>
+                        <td>Aucun événement</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>                
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Evenement[]? evenements;
+
+    protected override async Task OnInitializedAsync()
+    {
+        evenements = await Http.GetFromJsonAsync<Evenement[]>("https://localhost:7057/api/evenements");
+    }
+}
+
