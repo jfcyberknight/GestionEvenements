@@ -1,8 +1,10 @@
 ﻿@using Frontend.Evenements.Model
+@using Microsoft.Extensions.Configuration
 
 @page "/evenements"
 
-@inject HttpClient Http
+@inject HttpClient _http
+@inject IConfiguration _configuration
 
 <PageTitle>Événements</PageTitle>
 
@@ -26,7 +28,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @if(evenements.Any())
+            @if (evenements.Any())
             {
                 foreach (var evenement in evenements)
                 {
@@ -40,12 +42,12 @@ else
             }
             else
             {
-                    <tr>
-                        <td>Aucun événement</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>                
+                <tr>
+                    <td>Aucun événement</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             }
         </tbody>
     </table>
@@ -56,7 +58,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        evenements = await Http.GetFromJsonAsync<Evenement[]>("https://localhost:7057/api/evenements");
+        evenements = await _http.GetFromJsonAsync<Evenement[]>($"{_configuration["Api:Backend"]}/evenements");
     }
 }
 
