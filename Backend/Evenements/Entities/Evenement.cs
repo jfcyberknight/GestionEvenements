@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Backend.Evenements.Entities
+﻿namespace Backend.Evenements.Entities
 {
-    public partial class Evenement
+    public class Evenement
     {
         public long Id { get; set; }
         public string? Nom { get; set; }

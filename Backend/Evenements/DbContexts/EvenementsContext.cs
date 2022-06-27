@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Backend.Evenements.Entities;
+﻿using Backend.Evenements.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Backend.Evenements.DbContexts
 {
-    public partial class EvenementsContext : DbContext
+    public partial class EvenementsContext : DbContext , IEvenementsContext
     {
         public EvenementsContext()
         {
@@ -17,7 +14,7 @@ namespace Backend.Evenements.DbContexts
         {
         }
 
-        public virtual DbSet<Evenement> Evenements { get; set; } = null!;
+        public DbSet<Evenement> Evenements { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

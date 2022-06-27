@@ -1,0 +1,9 @@
+# GestionEvenements
+
+ 
+/FrontEnd/bin
+/Backend/obj
+/Backend/bin
+/FrontEnd/obj
+/.vs
+.vs/GestionEvenements/DesignTimeBuild/.dtbcache.v2

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Frontend.Evenements.Model
+﻿namespace Frontend.Evenements.Model
 {
     public partial class Evenement
     {
