@@ -2,7 +2,7 @@
 
 namespace Frontend.Evenements.Model
 {
-    public partial class Evenement
+    public class Evenement
     {
         public long Id { get; set; }
 

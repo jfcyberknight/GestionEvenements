@@ -15,6 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "Frontend\Fronte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendTest", "BackendTest\BackendTest.csproj", "{6B7CD21A-478F-4C39-AD1F-06F11F5A977A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendTest", "FrontendTest\FrontendTest.csproj", "{48BA0398-43BD-4343-ACF2-BC96F4E4D35A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB88A817-6448-4389-A53D-A39A78B9D882} = {BB88A817-6448-4389-A53D-A39A78B9D882}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +38,10 @@ Global
 		{6B7CD21A-478F-4C39-AD1F-06F11F5A977A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B7CD21A-478F-4C39-AD1F-06F11F5A977A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B7CD21A-478F-4C39-AD1F-06F11F5A977A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48BA0398-43BD-4343-ACF2-BC96F4E4D35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BA0398-43BD-4343-ACF2-BC96F4E4D35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BA0398-43BD-4343-ACF2-BC96F4E4D35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BA0398-43BD-4343-ACF2-BC96F4E4D35A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

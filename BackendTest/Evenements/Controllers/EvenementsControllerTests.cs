@@ -1,7 +1,7 @@
 ﻿using Moq;
-using Backend.Evenements.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Backend.Evenements.Entities;
+using BackendTest;
 
 namespace Backend.Evenements.Controllers.Tests
 {
@@ -20,7 +20,7 @@ namespace Backend.Evenements.Controllers.Tests
         public void EvenementsControllerTest_ctor_ok()
         {
             // arrange
-            var mockContext = new Mock<EvenementsContextInMemory>();
+            var mockContext = new Mock<MockEvenementsContextInMemory>();
 
             // act
             var evenementsController = new EvenementsController(mockContext.Object);
@@ -34,9 +34,9 @@ namespace Backend.Evenements.Controllers.Tests
         public async Task GetEvenementsTest_ok()
         {
             // arrange
-            var options = new DbContextOptions<EvenementsContextInMemory>();            
+            var options = new DbContextOptions<MockEvenementsContextInMemory>();            
 
-            using (var context = new EvenementsContextInMemory(options))
+            using (var context = new MockEvenementsContextInMemory(options))
             {
                 context.Evenements.Add(new Evenement());
                 context.Evenements.Add(new Evenement());
