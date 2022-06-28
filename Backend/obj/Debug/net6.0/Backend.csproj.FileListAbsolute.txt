@@ -263,3 +263,8 @@ C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\Backend.pdb
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\Backend.genruntimeconfig.cache
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\obj\Debug\net6.0\ref\Backend.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\Backend\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

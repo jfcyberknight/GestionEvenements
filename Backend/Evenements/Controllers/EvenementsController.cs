@@ -76,20 +76,20 @@ namespace Backend.Evenements.Controllers
         //    return NoContent();
         //}
 
-        // POST: api/Evenements
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<Evenement>> PostEvenement(Evenement evenement)
-        //{
-        //    if (_context.Evenements == null)
-        //    {
-        //        return Problem("Entity set 'evenementsContext.Evenements'  is null.");
-        //    }
-        //    _context.Evenements.Add(evenement);
-        //    await _context.SaveChangesAsync();
+        //POST: api/Evenements
+        //To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Evenement>> PostEvenement(Evenement evenement)
+        {
+            if (_context.Evenements == null)
+            {
+                return Problem("Entity set 'evenementsContext.Evenements'  is null.");
+            }
+            _context.Evenements.Add(evenement);
+            await _context.SaveChangesAsync();
 
-        //    return CreatedAtAction("GetEvenement", new { id = evenement.Id }, evenement);
-        //}
+            return evenement;
+        }
 
         // DELETE: api/Evenements/5
         //[HttpDelete("{id}")]

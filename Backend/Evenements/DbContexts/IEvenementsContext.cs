@@ -6,5 +6,7 @@ namespace Backend.Evenements.DbContexts
     public interface IEvenementsContext
     {
         DbSet<Evenement> Evenements { get; }
+
+        Task SaveChangesAsync();
     }
 }

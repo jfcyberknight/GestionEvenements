@@ -16,6 +16,11 @@ namespace Backend.Evenements.DbContexts
 
         public DbSet<Evenement> Evenements { get; set; }
 
+        public Task SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

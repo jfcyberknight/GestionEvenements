@@ -7,10 +7,11 @@ Requis Windows
 Demarrer le projet en localhost
  - Dans un terminal
 	- Naviguer jusqu'au folder "Backend" de la solution
- - Executer la commande
+ - Executer les commandes
 	- docker-compose up
 		- Un database MariaDb sera cree
 		- Un utilitaire de visualisation de database sera disposible "Adminer"
+	- dotnet ef database update (roule la migration) 
  - Demarrer la solution
 	- Le backend et le frontend vont demarrer en meme temps, il ne reste plus qu'a utiliser l'application
  

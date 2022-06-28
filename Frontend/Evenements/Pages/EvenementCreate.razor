@@ -1,0 +1,71 @@
+﻿@using Frontend.Evenements.Model
+@using Microsoft.Extensions.Configuration
+
+@page "/evenements/create"
+
+@inject HttpClient _http
+@inject IConfiguration _configuration
+
+<PageTitle>Événement</PageTitle>
+
+<h1>Événement</h1>
+
+<p>Planifier un événement</p>
+
+@if (evenement == null)
+{
+    <p><em>Chargement...</em></p>
+}
+else
+{
+    <EditForm Model="@evenement" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label for="Nom" class="form-label">Nom</label>
+            <InputText id="nom" class="form-control" @bind-Value="evenement.Nom" />
+        </div>
+        <div class="mb-3">
+            <label for="Description" class="form-label">Description</label>
+            <InputText id="Description" class="form-control" @bind-Value="evenement.Description" />
+        </div>
+        <div class="mb-3">
+            <label for="DateDebut" class="form-label">Date Début</label>
+            <InputDate class="form-control" @bind-Value="evenement.Datedebut" />
+        </div>
+        <div class="mb-3">
+            <label for="DateFin" class="form-label">Date Fin</label>
+            <InputDate class="form-control" @bind-Value="evenement.Datefin" />
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mb-3">
+            @if (isLoading)
+            {
+             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>   
+            }            
+            Planifier
+        </button>
+
+    </EditForm>
+}
+
+@code {
+    private Evenement evenement;
+    private bool isLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        evenement = new();
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        isLoading = true;
+        await _http.PostAsJsonAsync<Evenement>($"{_configuration["Api:Backend"]}/evenements", evenement);
+        evenement = new();
+        isLoading = false;
+    }
+}
+
