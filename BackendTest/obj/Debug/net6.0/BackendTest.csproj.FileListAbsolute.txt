@@ -350,3 +350,4 @@ C:\Users\jfvallee\source\repos\perso\GestionEvenements\BackendTest\bin\Debug\net
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\BackendTest\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\BackendTest\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\jfvallee\source\repos\perso\GestionEvenements\BackendTest\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\jfvallee\source\repos\perso\GestionEvenements\BackendTest\bin\Debug\net6.0\nunit.framework.dll

@@ -1,5 +1,6 @@
 ﻿using Backend.Evenements.DbContexts;
 using Backend.Evenements.Entities;
+using Backend.Evenements.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,22 +10,23 @@ namespace Backend.Evenements.Controllers
     [ApiController]
     public class EvenementsController : ControllerBase
     {
-        private readonly IEvenementsContext _context;
+        private readonly IRepository<Evenement> _repository;
 
-        public EvenementsController(IEvenementsContext context)
+        public EvenementsController(IRepository<Evenement> repository)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
         // GET: api/Evenements
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Evenement>>> GetEvenements()
         {
-            if (_context.Evenements == null)
+            IEnumerable<Evenement> evenements = await _repository.GetAll();
+            if (evenements == null)
             {
                 return NotFound();
             }
-            return await _context.Evenements.ToListAsync();
+            return Ok(await _repository.GetAll());
         }
 
         // GET: api/Evenements/5
@@ -80,15 +82,8 @@ namespace Backend.Evenements.Controllers
         //To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Evenement>> PostEvenement(Evenement evenement)
-        {
-            if (_context.Evenements == null)
-            {
-                return Problem("Entity set 'evenementsContext.Evenements'  is null.");
-            }
-            _context.Evenements.Add(evenement);
-            await _context.SaveChangesAsync();
-
-            return evenement;
+        {            
+            return Ok(await _repository.Post(evenement));
         }
 
         // DELETE: api/Evenements/5

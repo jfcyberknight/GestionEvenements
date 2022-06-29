@@ -1,4 +1,6 @@
 using Backend.Evenements.DbContexts;
+using Backend.Evenements.Entities;
+using Backend.Evenements.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<EvenementsContext>();
 builder.Services.AddScoped<IEvenementsContext, EvenementsContext>();
+builder.Services.AddScoped<IRepository<Evenement>, EvenementsRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
